@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+                <div class="row ml-3">
+                    <div class="col-md-10 shadow mr-4 ml-4 p-1 mb-4 bg-white rounded">
+                      <img [src]="editData.avatar"  class="img-thumbnail" style="width: 100%;">
+                          <!-- <h4>list.first_name&nbsp;list.last_name</h4> -->
+                    </div> 
+                  </div>
+                <div class="col-md-6 ml-3">
+                    <div class="form-grop">
+                        <span>First Name</span>
+                        <input type="text" name="firstName" [(ngModel)]="firstName" class="form-control"  placeholder="first Name" id="firstName" #firstname>&nbsp;	
+                    </div>
+                    <div class="form-grop">
+                        <span>Last Name</span>
+                        <input type="text" name="lastName" [(ngModel)]="lastName"  class="form-control" placeholder="last Name" id="lastName" #lastname>&nbsp;	
+                    </div>
+                    <div class="form-grop">
+                        <span>Email Address</span>
+                        <input type="text" name="email" [(ngModel)]="email" class="form-control"  maxlength="30" placeholder="Enter Email" id="email" #emailId>&nbsp;	
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Photo</label>
+                        <input type="file" name="exampleFormControlFile1" [(ngModel)]="avatar" class="form-control-file" id="exampleFormControlFile1" #exampleFormControlFile1>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-info" (click)="updateEmpData($event)">Add Employee</button>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

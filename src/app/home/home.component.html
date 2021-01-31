@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="tagLines"><b> Total of <span style="color: #ffa500;">{{empList.length}}</span> employees</b></h4>
+          <div class="row" style="margin: 0">
+            <div class="col-sm-3 shadow p-2 mb-3 bg-white rounded"
+             *ngFor="let list of empList | paginate: { itemsPerPage: 6, currentPage: p}; let i = index" 
+             style="padding-bottom: 2rem; cursor: pointer;" (click)="showEmployeeDetails(list.id)">
+                <img [src]="list.avatar" class="img-thumbnail" style="width: 100%;" alt="list{{i}}" id="imageId{{i}}">
+                <div class="card-footer footerPart">
+                  <h4>{{list.first_name}}&nbsp;{{list.last_name}} </h4>
+                </div>
+            </div>  
+          </div>
+          <div style="float: right;">
+          <!-- <pagination-controls (click)="paginations(p)" (pageChange)="p = $event"></pagination-controls> -->
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
